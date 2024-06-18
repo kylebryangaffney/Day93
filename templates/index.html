@@ -1,0 +1,18 @@
+{% extends "base.html" %} {% block title %}Home - BSS Filter{% endblock %} {%
+block content %}
+<div class="container">
+  <h1>SELECT SAXOPHONES</h1>
+  <form method="POST">
+    {{ form.hidden_tag() }}
+    <div class="mb-3">
+      {{ form.available.label(class="form-check-label") }} {{
+      form.available(class="form-check-input") }}
+    </div>
+    <div class="mb-3">
+      {{ form.type_of_sax.label(class="form-label") }} {{
+      form.type_of_sax(class="form-control") }}
+    </div>
+    <div class="mb-3">{{ form.submit(class="btn btn-primary") }}</div>
+  </form>
+</div>
+{% endblock %}

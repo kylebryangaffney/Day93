@@ -1,0 +1,44 @@
+/* styles.css */
+
+body {
+    background-color: #121212;
+    color: #ffffff;
+    font-family: Poppins, Arial, sans-serif;  /* Add Poppins to the font stack */
+  }
+  
+/* Override Bootstrap blue with white */
+.btn-primary,
+.text-primary,
+a {
+  color: #ffffff;
+}
+
+  
+  /* Other styles remain the same... */
+  
+  .navbar {
+    border-bottom: 1px solid #444;
+  }
+  
+  .navbar-brand,
+  .nav-link {
+    color: #ffffff !important;
+  }
+  
+  .nav-link:hover {
+    color: #cccccc !important;
+  }
+  
+  .container {
+    margin-top: 20px;
+  }
+  
+  footer {
+    background-color: #333;
+    color: #ffffff;
+    padding: 10px 0;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+  }
+  

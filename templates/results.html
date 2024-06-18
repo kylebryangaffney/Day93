@@ -1,0 +1,27 @@
+{% extends "base.html" %} {% block title %}Results - BSS Filter{% endblock %} {%
+block content %}
+<div class="container">
+  <h1>Saxophone Results</h1>
+  {% if saxophones %}
+  <ul class="list-group">
+    {% for sax in saxophones %}
+    <li class="list-group-item d-flex align-items-center">
+      <img
+        src="{{ sax.image_url }}"
+        alt="{{ sax.title }}"
+        width="50"
+        class="me-3"
+      />
+      <div>
+        <strong>{{ sax.title }}</strong> - {{ sax.price }}<br />
+        <a href="{{ sax.link }}" target="_blank">more info</a><br />
+        <span>{{ sax.availability }}</span> - <span>{{ sax.sax_type }}</span>
+      </div>
+    </li>
+    {% endfor %}
+  </ul>
+  {% else %}
+  <p>no saxophones found</p>
+  {% endif %}
+</div>
+{% endblock %}
