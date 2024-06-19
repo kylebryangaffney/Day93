@@ -1,11 +1,36 @@
-/* styles.css */
-
+/* General body styles */
 body {
-    background-color: #121212;
-    color: #ffffff;
-    font-family: Poppins, Arial, sans-serif;  /* Add Poppins to the font stack */
-  }
-  
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: #121212;
+  color: #ffffff;
+  font-family: Poppins, Arial, sans-serif;  /* Add Poppins to the font stack */
+}
+
+/* Container styles */
+.container {
+  flex: 1;
+  margin-top: 20px;
+}
+
+/* Footer styles */
+footer {
+  background-color: #343a40;
+  color: #fff;
+  text-align: center;
+  padding: 1rem 0;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+}
+
+footer div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 /* Override Bootstrap blue with white */
 .btn-primary,
 .text-primary,
@@ -13,32 +38,69 @@ a {
   color: #ffffff;
 }
 
-  
-  /* Other styles remain the same... */
-  
-  .navbar {
-    border-bottom: 1px solid #444;
-  }
-  
-  .navbar-brand,
-  .nav-link {
-    color: #ffffff !important;
-  }
-  
-  .nav-link:hover {
-    color: #cccccc !important;
-  }
-  
-  .container {
-    margin-top: 20px;
-  }
-  
-  footer {
-    background-color: #333;
-    color: #ffffff;
-    padding: 10px 0;
-    position: fixed;
-    width: 100%;
-    bottom: 0;
-  }
-  
+/* Navbar styles */
+.navbar {
+  border-bottom: 1px solid #444;
+}
+
+.navbar-brand,
+.nav-link {
+  color: #ffffff !important;
+}
+
+.nav-link:hover {
+  color: #cccccc !important;
+}
+
+/* Checkbox styles */
+.form-check-input {
+  background-color: #fff;
+  border-color: #000;
+}
+
+.form-check-input:checked {
+  background-color: #000;
+  border-color: #000;
+}
+
+.form-check-input:checked::after {
+  color: #fff; /* This changes the check mark color to white */
+}
+
+/* Button styles */
+.btn-primary {
+  background-color: #000; /* Background color of the button */
+  border-color: #000; /* Border color of the button */
+  color: #fff; /* Text color of the button */
+}
+
+.btn-primary:hover {
+  background-color: #333; /* Background color of the button on hover */
+  border-color: #333; /* Border color of the button on hover */
+  color: #fff; /* Text color of the button on hover */
+}
+
+/* Smaller select input */
+.smaller-select {
+  width: auto; /* Adjust this value to your preferred width */
+  max-width: 200px; /* Example width, you can change it as needed */
+}
+
+/* Results list styles */
+.list-group-item {
+  background-color: #333;
+  color: #ffffff;
+  border: 1px solid #444;
+}
+
+.list-group-item a {
+  color: #cccccc;
+}
+
+.list-group-item a:hover {
+  color: #ffffff;
+}
+
+.list-group-item img {
+  border-radius: 5px;
+}

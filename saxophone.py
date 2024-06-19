@@ -4,14 +4,14 @@ import requests
 class Saxophone:
     def __init__(self, title, price, link, availability, image_url, sax_type):
         self.title = title
-        self.price = price
+        self.price = float(price.replace('$', '').replace(',', '')) if price else 0.0
         self.link = link
         self.availability = availability
         self.image_url = image_url
         self.sax_type = sax_type
 
     def __str__(self):
-        return f"{self.title}, {self.price}, {self.link}, {self.availability}, {self.image_url}, {self.sax_type}"
+        return f"{self.title}, ${self.price:.2f}, {self.link}, {self.availability}, {self.image_url}, {self.sax_type}"
 
     def to_dict(self):
         return {
@@ -22,6 +22,7 @@ class Saxophone:
             "image_url": self.image_url,
             "sax_type": self.sax_type
         }
+
 
 def fetch_saxophones():
     base_url = "https://www.bostonsaxshop.com"
@@ -56,7 +57,7 @@ def fetch_saxophones():
         image_tag = saxophone_div.find("img", class_="grid-item-image")
 
         title = title_div.getText().strip() if title_div else "No Title"
-        price = price_div.getText().strip() if price_div else "No Price"
+        price = price_div.getText().strip() if price_div else "0.0"
         link = f"{base_url}{link_tag.get('href')}" if link_tag else "No Link"
         availability = availability_div.getText().strip() if availability_div else "Limited Availability"
         image_url = image_tag['data-image'] if image_tag and 'data-image' in image_tag.attrs else "No Image Available"

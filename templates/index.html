@@ -8,9 +8,17 @@ block content %}
       {{ form.available.label(class="form-check-label") }} {{
       form.available(class="form-check-input") }}
     </div>
-    <div class="mb-3">
+    <div class="form-group">
       {{ form.type_of_sax.label(class="form-label") }} {{
-      form.type_of_sax(class="form-control") }}
+      form.type_of_sax(class="form-select smaller-select") }}
+    </div>
+    <div class="form-group">
+      {{ form.min_price.label(class="form-label") }} {{
+      form.min_price(class="form-control smaller-select") }}
+    </div>
+    <div class="form-group">
+      {{ form.max_price.label(class="form-label") }} {{
+      form.max_price(class="form-control smaller-select") }}
     </div>
     <div class="mb-3">{{ form.submit(class="btn btn-primary") }}</div>
   </form>

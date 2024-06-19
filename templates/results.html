@@ -1,7 +1,7 @@
 {% extends "base.html" %} {% block title %}Results - BSS Filter{% endblock %} {%
 block content %}
-<div class="container">
-  <h1>Saxophone Results</h1>
+<div class="container mt-4">
+  <h1>SAXOPHONE RESULTS</h1>
   {% if saxophones %}
   <ul class="list-group">
     {% for sax in saxophones %}
@@ -13,7 +13,7 @@ block content %}
         class="me-3"
       />
       <div>
-        <strong>{{ sax.title }}</strong> - {{ sax.price }}<br />
+        <strong>{{ sax.title }}</strong> - ${{ "%.2f"|format(sax.price) }}<br />
         <a href="{{ sax.link }}" target="_blank">more info</a><br />
         <span>{{ sax.availability }}</span> - <span>{{ sax.sax_type }}</span>
       </div>
@@ -21,7 +21,7 @@ block content %}
     {% endfor %}
   </ul>
   {% else %}
-  <p>no saxophones found</p>
+  <p>No saxophones found.</p>
   {% endif %}
 </div>
 {% endblock %}
